@@ -1,10 +1,27 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure'  version '2.12.0'
 }
 
 group = 'com.tl'
 version = '1.0-SNAPSHOT'
 
+allure {
+    report {
+        version = '2.19.0'
+    }
+    adapter {
+        aspectjWeaver = true
+        frameworks {
+            junit5 {
+                adapterVersion = '2.19.0'
+
+            }
+        }
+
+    }
+
+}
 repositories {
     mavenCentral()
 }
